@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>A less simple form</title>
+</head>
+<body>
+<SCRIPT LANGUAGE="JavaScript1.1">
+// A utility function that returns true if a string contains only whitespace
+function isBlank(s)
+{
+   for (var i = 0 ; i < s.length ; i++) {
+      var c = s.charAt(i) ;
+      if ((c != ' ') && (c != '\t') && (c != 'n')) return false;
+   }
+   return true;
+}
+
+// This function performs verification, and sets the form action if OK
+function verify(f)
+{
+    var errors = "";
+    var msg;
+    var errCount = 0 ;
+    for (var i = 0 ; i < f.length; i++) {
+       var e = f.elements[i];
+       if (isBlank(e.value)) {
+             errors += e.name + "\n" ;
+             errCount++;
+       }
+       if (e.name=="target machine") 
+          f.action="http://"+e.value+".cs.man.ac.uk:8080/servlet/idServer" ;
+
+    }
+    if (!errors) return true;
+    if (errCount == 1)
+       msg = "The form was not submitted because the following field was empty:\n"
+             + errors + "Please complete it!\n";
+    else 
+       msg = "The form was not submitted because the following fields were empty:\n"
+             + errors + "Please complete them!\n";
+    alert(msg);
+    return false ;
+}
+</SCRIPT>
+
+<H1>Example Web form</H1>
+<P>
+This is a simple example form to demonstrate the use of
+a servlet. It calls the servlet idServer, and
+the machine identified should be running
+a servletrunner on a directory containing the servlet's classfile for it to work.
+<HR>
+<form method="post"
+ onSubmit="return verify(this);
+">
+
+<H2> Please insert text to be sent in the box below:</H2>
+Text to be sent: <input name="input String"><P>
+<H2> Which machine should it be sent to?</H2>
+Machine (e.g. ug001): <input name="target machine"><P>
+Press <input type="submit" value="this button"> to submit your query.
+</form>
+<hr>
+</body>
+</html>
