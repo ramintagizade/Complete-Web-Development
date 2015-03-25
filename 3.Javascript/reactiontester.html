@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Javascript Game </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style type="text/css">
+    	#box {
+    		width: 200px;
+    		height: 200px;
+    		background-color: red;
+            display: none;
+    	}	
+    </style>
+
+ </head>
+<body>
+    <p> Your time:  <span id ="time"> </span> </p>
+    <div id = "box"> </div>
+ 	<script type="text/javascript"> 
+        var clickedTime , createdTime , reactionTime;
+	    function makeBox() {
+            var time = Math.random();
+            time = 5000*time;
+            setTimeout(function () {
+            document.getElementById("box").style.display = "block";
+                createdTime = Date.now();
+            },time);
+        }
+        document.getElementById("box").onclick = function () {
+            clickedTime = Date.now();
+            reactionTime = (clickedTime - createdTime)/1000;
+            document.getElementById("time").innerHTML = reactionTime;
+            document.getElementById("box").style.display = "none";
+            makeBox();
+            }    
+            makeBox();
+
+ 	</script>
+
+</body>
+</html>
