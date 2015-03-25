@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>Learning Javascript</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ </head>
+<body>
+    
+	
+    <p>What is the wheather ? </p>
+    <input  id = "wheather" />
+    <button id = "myButton">Submit</button>
+
+ 	<script type="text/javascript"> 
+    var myArray = new Array();
+    myArray[0] = "pizza";
+    myArray[1] = "chocolate";
+
+    myotherArray = ["rain","sunshine"];
+    myotherArray.push("snow");
+    myotherArray.splice(2,0,"hail","cloudy");
+
+    console.log(myotherArray);
+  
+   document.getElementById("myButton").onclick = function() {
+        if(document.getElementById("wheather").value == "rain") {
+            alert("it is raining");
+        }
+        else{
+            alert("it is not raining");
+        }
+   }	
+ 	</script>
+
+</body>
+</html>
