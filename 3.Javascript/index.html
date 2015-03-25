@@ -24,6 +24,16 @@
     <div id="styleDiv">some text for input</div>
 
  	<script type="text/javascript"> 
+    var myArray = new Array();
+    myArray[0] = "pizza";
+    myArray[1] = "chocolate";
+
+    myotherArray = ["rain","sunshine"];
+    myotherArray.push("snow");
+    myotherArray.splice(2,0,"hail","cloudy");
+
+    console.log(myotherArray);
+
  	    document.getElementById("stylesChanger").onclick = function() {
  	    	var styleVar = document.getElementById("myInput").value;	
  	    	document.getElementById("styleDiv").innerHTML = styleVar;
