@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"> </script>
+    <script>
+      var Address = '1600 Amphitheatre Parkway, Mountain View ';
+      $.ajax({
+          type: "GET",
+          url:
+          "https://maps.googleapis.com/maps/api/geocode/xml?address="+Address+"&key=AIzaSyAjm-OhTV_EqEv4F-MqkklBf5WdLgHKEgc",
+          dataType: "xml",
+          success: processXML
+      }
+    );
+    function processXML(xml) {
+         $(xml).find("address_component").each(function() {
+          if($(this).find("type").text()=="postal_code") {
+            alert($(this).find("long_name").text());
+          }
+        });
+    }
+    </script>
+  </body>
+</html>
