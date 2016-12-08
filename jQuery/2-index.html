@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+      <title> jQuery Example </title>
+      <meta charset="utf-8" />
+      <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+      <meta name="viewport" content="width=device-width ,initial-scale=1" />
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" >
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+      <style>
+        #square{
+          height: 200px;
+          width:200px;
+          background-color: gray;
+        }
+        #target {
+          height: 300px;
+          width:300px;
+          background-color: yellow;
+        }
+      </style>
+  </head>
+  <body>
+      <div id="accordion">
+      <h3> Title </h3>
+      <div>
+          <p>This is some text .This is some text .This is some text .This is some text . </p>
+      </div>
+      <h3> Title </h3>
+      <div>
+          <p>This is some text .This is some text .This is some text .This is some text . </p>
+      </div>
+      <h3> Title </h3>
+      <div>
+          <p>This is some text .This is some text .This is some text .This is some text . </p>
+      </div>
+      <h3> Title </h3>
+      <div>
+          <p>This is some text .This is some text .This is some text .This is some text . </p>
+      </div>
+    </div>
+      <script>
+        $("#accordion").accordion();
+      </script>
+  </body>
+</html>
